@@ -15,10 +15,9 @@
   ],
   "main": [
     "bin/materialize.css",
-    "bin/materialize.js" 
+    "bin/materialize.js"
   ],
   "ignore": [
-    "jade/",
     ".gitignore",
     "CNAME",
     "css/",
@@ -26,11 +25,7 @@
     "README.md",
     "images/",
     "js/jquery.timeago.js",
-    "js/init.js",
-    "js/prism.js",
     "res/",
-    "sass/style.scss",
-    "sass/ghpages-materialize.scss",
     "**/*.html",
     "**/*.zip",
     "**/*.txt",
