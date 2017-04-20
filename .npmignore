@@ -6,3 +6,6 @@ prepros.cfg
 Thumbs.db
 .projectile
 **/*.log
+docs/
+Gemfile
+Gemfile.lock

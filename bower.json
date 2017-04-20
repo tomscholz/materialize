@@ -24,14 +24,14 @@
     "bower.json",
     "README.md",
     "images/",
-    "js/jquery.timeago.js",
-    "res/",
     "**/*.html",
     "**/*.zip",
     "**/*.txt",
-    "sitemap.xml",
     "package.json",
-    "Gruntfile.js"
+    "Gruntfile.js",
+    "docs/",
+    "Gemfile",
+    "Gemfile.lock"
   ],
   "dependencies": {
     "jquery": ">=2.1.1"
