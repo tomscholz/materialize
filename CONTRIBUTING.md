@@ -1,27 +1,41 @@
-## Contributing
-- Compiling Files
-  - `npm install`
-  - `grunt monitor`, this will compile .scss, .js., .jade files
-- Documentation
-  - If you notice an error in the documentation, please edit the corresponding .html page under jade/page-contents/.
-- Issues
+Contributing
+------------
+### Table of contents:
+  - Contribution 101
+  - Issues
+  - Pull Requests
+  - Jasmine Testing Guide
+
+## Contribution 101 (Pull requests)
+  - Fork this repo to your own git
+  - Make your changes
+  - Submit a pull request with full remarks documenting your changes
+  - Pull request MAY then be accepted by project creators
+  - Make sure you are altering the correct source files (Never alter compiled / dist files)
+
+## Issues:
   - If you have an issue please make sure you document the problems in depth.
-  - Create screenshots of your issue and include a [Codepen](http://codepen.io/Dogfalo/pen/xbzPQV) of the problem where applicable
+  - Create screenshots of your issue and include a [Codepen](http://codepen.io/Dogfalo/pen/xbzPQV) of the problem where applicable.
   - Unclear issues with little explanations will be closed.
   - Issues without a Codepen (where applicable) will be closed or ignored.
-- Feature Requests
-  - We like feature requests but make sure that it can be seen within the goals of the project and not just something you need individually. Also you should try and give as much examples and details about the new feature as possible.
-- Code Examples
+
+### Code Examples
   - Use this [Codepen](http://codepen.io/Dogfalo/pen/xbzPQV) to illustrate your problem.
 
-## Contribution 101
-- Fork this repo to your own git
-- Make your changes
-- Submit a pull request with full remarks documenting your changes
-- Pull request MAY then be accepted by project creators
-- Make sure you are altering the correct source files (Never alter compiled / dist files)
+## Pull requests:
 
-## Jasmine Testing Guide
+### Feature Requests
+  - We like feature requests but make sure that it can be seen within the goals of the project and not just something you need individually. Also you should try and give as much examples and details about the new feature as possible. If you are requesting a component from the [Material design guidelines](https://material.io/guidelines/), make sure to include a link to the component
+
+### Documentation
+  - If you notice an error in the documentation, please edit the corresponding .html page under jade/page-contents/.
+
+### Submitting Your Pull Request
+
+  - Try and keep your commit history clean and concise. Once you submit your pull request, [Travis CI](https://travis-ci.org/Dogfalo/materialize) will automatically run your tests and will show a checkmark to show that all the tests have passed. Once this is done, we’ll review your tests and code and make comments if there are issues or things we think could be improved. Then once everything looks good we’ll merge the code in!
+
+
+## Jasmine Testing Guide:
 **References:**
 - [Jasmine Documentation](http://jasmine.github.io/2.0/introduction.html)
 - [Grunt Jasmine Plugin](https://github.com/gruntjs/grunt-contrib-jasmine)
@@ -52,7 +66,7 @@ expect(toast.first('span').text()).not.toBe('I am toast');
 
 You can use beforeEach, and afterEach in either block to designate code that will execute before or after each item. This is useful if you need to setup some scenario for each test, or reset some things after each test.
 
-When writing expect statements (Jasmine’s form of assert), it is very important to write an expected behavior string so in the event of an error, the test that failed is very clear. 
+When writing expect statements (Jasmine’s form of assert), it is very important to write an expected behavior string so in the event of an error, the test that failed is very clear.
 
 Example:
 ```javascript
@@ -64,11 +78,6 @@ Because our components are very front end heavy, familiarize yourself with jQuer
 
 We also understand that testing CSS properties is pretty tough so you’ll have to be creative when writing good tests that ensure the styling is still working. Try and cover as many cases as you can but don’t worry if there are some edge cases. You can add comments describing some problematic edge cases in TODOs so we know about them.
 
-### Submitting Your Pull Request
-
-Try and keep your commit history clean and concise. Once you submit your pull request, [Travis CI](https://travis-ci.org/Dogfalo/materialize) will automatically run your tests and will show a checkmark to show that all the tests have passed. Once this is done, we’ll review your tests and code and make comments if there are issues or things we think could be improved. Then once everything looks good we’ll merge the code in!
-
-
 ### Useful Jasmine Tips
 
 1. To only run a specific spec at a time, to avoid wasting your time running all our other tests, you can set the flag `--filter`. For example:
@@ -76,10 +85,10 @@ Try and keep your commit history clean and concise. Once you submit your pull re
     `grunt travis --filter=tabs`
     ```
 
-    This would only run specs with tabs in its name. 
+    This would only run specs with tabs in its name.
 
 2. If you need a timeout in your test (waiting for some animation or action to be executed) you need to use the done callback. In your `it()` behavior function set done as an argument to your anonymous function. Then you can use javascript’s window `setTimeout`s normally. And when you want the test to finish just call the `done()` function. For example:
-    
+
     ```javascript
     it ('should wait for a timeout', function(done) {
       // Execute action
@@ -91,4 +100,4 @@ Try and keep your commit history clean and concise. Once you submit your pull re
     });
     ```
 
-    **Note:** If you add done as a callback, and you don’t call the `done()` function, it will stall forever and error after a max limit of around 5 seconds. 
+    **Note:** If you add done as a callback, and you don’t call the `done()` function, it will stall forever and error after a max limit of around 5 seconds.
