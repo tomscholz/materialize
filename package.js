@@ -9,16 +9,10 @@ Package.describe({
 
 Package.onUse(function (api) {
   api.versionsFrom('METEOR@1.0');
-
-  api.use('fourseven:scss@3.10.0');
-  api.use('jquery', 'client');
-  api.imply('jquery', 'client');
-
+  api.imply('jquery');
+  api.use([ 'jquery', 'fourseven:scss'], 'client');
+  api.addFiles('dist/js/materialize.js', 'client');
   api.addFiles([
-    'dist/js/materialize.js'
-  ], 'client');
-
-  var scssFiles = [
     'sass/components/date_picker/_default.date.scss',
     'sass/components/date_picker/_default.scss',
     'sass/components/date_picker/_default.time.scss',
@@ -62,9 +56,7 @@ Package.onUse(function (api) {
     'sass/components/_variables.scss',
     'sass/components/_waves.scss',
     'sass/materialize.scss'
-  ];
-
-  api.addFiles(scssFiles, 'client');
+  ], 'client');
 
   api.export('Materialize', 'client');
 });
