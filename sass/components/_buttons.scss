@@ -14,18 +14,21 @@
 }
 
 // Disabled shared style
-.btn.disabled,
-.btn-floating.disabled,
-.btn-large.disabled,
 .btn-flat.disabled,
-.btn:disabled,
-.btn-floating:disabled,
-.btn-large:disabled,
 .btn-flat:disabled,
-.btn[disabled],
+.btn-flat[disabled],
+.btn-floating.disabled,
+.btn-floating:disabled,
 .btn-floating[disabled],
+.btn-large.disabled,
+.btn-large:disabled,
 .btn-large[disabled],
-.btn-flat[disabled] {
+.btn-block.disabled,
+.btn-block:disabled,
+.btn-block[disabled],
+.btn.disabled,
+.btn:disabled,
+.btn[disabled] {
   pointer-events: none;
   background-color: $button-disabled-background !important;
   box-shadow: none;
@@ -40,9 +43,10 @@
 
 // Shared icon styles
 .btn,
+.btn-flat,
 .btn-floating,
 .btn-large,
-.btn-flat {
+.btn-block {
   font-size: $button-font-size;
   outline: 0;
 
@@ -288,4 +292,5 @@ button.btn-floating {
 // Block button
 .btn-block {
   display: block;
+  width: $button-block-width;
 }
