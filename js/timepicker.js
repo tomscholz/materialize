@@ -25,7 +25,7 @@
    */
   class Timepicker extends Component {
     constructor(el, options) {
-      super(Timepicker, el, options);
+      super(Timepicker, el, option);
 
       this.el = el;
       this.$el = $(el);
@@ -209,7 +209,7 @@
 
     _setupModal() {
       this.modal = M.Modal.init(this.modalEl, {
-        onCloseEnd: () => {
+        complete: () => {
           this.isOpen = false;
         }
       });
